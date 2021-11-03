@@ -12,26 +12,34 @@
 .debug main {
     height: 1000px;
 }
+.debug .row {
+    height: 500px;
+}
 .debug #side {
-    height: 200px;
+    height: 100%;
     width: 35%;
-    background-color: aqua;
 }
 .debug #main {
-    height: 200px;
+    height: 100%;
     width: 65%;
-    background-color: green;
+    
 }
 
 /* common rules */
 .row {
     display: flex;
 }
+.main_container .head {
+    height: 50px;
+    width: 100%;
+    background-color: #EAEAEA;
+}
 
 /**********
 header  
 **********/
 header {
+    height: 30px;
     background-color: #009688;
 }
 
@@ -40,4 +48,33 @@ main
 **********/
 main {
     background-color: #DADBD4;
+}
+.main_container {
+    width: 80%;
+    margin: auto;
+}
+
+/* side */
+#notifications {
+    height: 60px;
+    background-color: #8EDAFC;
+}
+#search {
+    height: 40px;
+    background-color: #EAEAEA;
+}
+#contacts {
+    height: calc(100% - 150px);
+    background-color: white;
+}
+
+/* chat */
+#chat {
+    height: calc(100% - 95px);
+    width: 100%;
+    background-color: darkgray;
+}
+#message_input {
+    height: 45px;
+    background-color: #F3EEEA;
 }
