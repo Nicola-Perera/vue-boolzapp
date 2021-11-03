@@ -12,6 +12,7 @@
 .debug main {
     height: 1000px;
 }
+
 .debug .row {
     height: 500px;
 }
@@ -70,11 +71,23 @@ main {
 #notifications {
     height: 60px;
     background-color: #8EDAFC;
+    padding: .7rem;
+}
+#notifications h3 {
+    font-size: .8rem;
+}
+.fa-bell-slash {
+    color: #8EDAFC;
+    background-color: white;
+    font-size: 1rem;
+    border-radius: 50%;
+    padding: .5rem;
+    margin-right: 1rem;
 }
 #search {
     height: 40px;
     background-color: #F3EEEA;
-    padding: .3rem;
+    padding: .5rem;
 }
 #search .input {
     background-color: white;
