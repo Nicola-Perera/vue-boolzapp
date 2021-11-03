@@ -31,7 +31,14 @@
                     <div id="search"></div>
 
                     <!-- lista dei miei contatti con chat aperta -->
-                    <div id="contacts"></div>
+                    <div id="contacts">
+
+                        <div class="item" v-for="contact in contacts">
+                            <div class="row">
+                                {{contact.name}}
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
                 <!-- blocco principale a destra -->
