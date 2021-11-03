@@ -74,17 +74,17 @@ main {
 #user_avatar, #user_avatar .row {
     height: 100%;
 }
-#user_avatar > .row {
+#user_avatar > .row, #contact_avatar > .row {
     padding: .5rem;
     justify-content: space-between;
 }
 .my_profile > h3, .my_option > i {
   margin-top: .5rem;
 }
-.my_option {
+.my_option, .contact_option {
     color: lightgray;
 }
-.fa-comment-alt {
+.fa-comment-alt, .fa-paperclip {
     margin: 0 1rem;
 }
 
