@@ -1,0 +1,43 @@
+/* reste rules */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* debug */
+.debug header {
+    height: 100px;
+}
+.debug main {
+    height: 1000px;
+}
+.debug #side {
+    height: 200px;
+    width: 35%;
+    background-color: aqua;
+}
+.debug #main {
+    height: 200px;
+    width: 65%;
+    background-color: green;
+}
+
+/* common rules */
+.row {
+    display: flex;
+}
+
+/**********
+header  
+**********/
+header {
+    background-color: #009688;
+}
+
+/**********
+main  
+**********/
+main {
+    background-color: #DADBD4;
+}
