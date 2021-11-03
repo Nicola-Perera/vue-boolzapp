@@ -94,5 +94,11 @@ const app = new Vue ({
             },
             ]
 
+    },
+    methods: {
+        chatWith(i) {
+            index = i;
+            console.log(index);
+        }
     }
 })

@@ -1,0 +1,138 @@
+/* reste rules */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* debug */
+.debug header {
+    height: 100px;
+}
+.debug main {
+    height: 1000px;
+}
+
+.debug .row {
+    height: 500px;
+}
+.debug #side {
+    height: 100%;
+    width: 35%;
+}
+.debug #main {
+    height: 100%;
+    width: 65%;
+    
+}
+
+/* common rules */
+.row {
+    display: flex; !important
+}
+#root .head {
+    height: 50px;
+    width: 100%;
+    background-color: #EAEAEA;
+}
+.item .row {
+    height: 50px;
+    padding: .5rem;
+}
+.item .row:hover {
+    background-color: #E9EBEB;
+}
+
+.avatar {
+    border-radius: 50%;
+    margin-right: .5rem;
+}
+
+/**********
+header  
+**********/
+header {
+    height: 30px;
+    background-color: #009688;
+}
+
+/**********
+main  
+**********/
+main {
+    background-color: #DADBD4;
+}
+#root {
+    width: 80%;
+    margin: auto;
+}
+
+/* side */
+#user_avatar {
+    border-right: 2px solid lightgray;
+}
+#user_avatar, #user_avatar .row {
+    height: 100%;
+}
+#user_avatar > .row, #contact_avatar > .row {
+    padding: .5rem;
+    justify-content: space-between;
+}
+.my_profile > h3, .my_option > i {
+  margin-top: .5rem;
+}
+.my_option, .contact_option {
+    color: lightgray;
+}
+.fa-comment-alt, .fa-paperclip {
+    margin: 0 1rem;
+}
+
+
+#notifications {
+    height: 60px;
+    background-color: #8EDAFC;
+    padding: .8rem;
+}
+#notifications h3 {
+    font-size: .8rem;
+}
+.fa-bell-slash {
+    color: #8EDAFC;
+    background-color: white;
+    font-size: 1rem;
+    border-radius: 50%;
+    padding: .5rem;
+    margin-right: 1rem;
+}
+#search {
+    height: 40px;
+    background-color: #F3EEEA;
+    padding: .5rem;
+}
+#search .input {
+    background-color: white;
+    height: 1.5rem;
+    padding-left: .2rem;
+    padding-top: .2rem;
+}
+#search  input {
+    background-color: transparent;
+    border: none;
+    width: 90%;
+}
+#contacts {
+    height: calc(100% - 150px);
+    background-color: white;
+}
+
+/* chat */
+#chat {
+    height: calc(100% - 95px);
+    width: 100%;
+    background-color: darkgray;
+}
+#message_input {
+    height: 45px;
+    background-color: #F3EEEA;
+}
