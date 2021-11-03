@@ -28,14 +28,14 @@
 
 /* common rules */
 .row {
-    display: flex;
+    display: flex; !important
 }
-.main_container .head {
+#root .head {
     height: 50px;
     width: 100%;
     background-color: #EAEAEA;
 }
-.item .row{
+.item .row {
     height: 50px;
     padding: .5rem;
 }
@@ -68,10 +68,31 @@ main {
 }
 
 /* side */
+#user_avatar {
+    border-right: 2px solid lightgray;
+}
+#user_avatar, #user_avatar .row {
+    height: 100%;
+}
+#user_avatar > .row {
+    padding: .5rem;
+    justify-content: space-between;
+}
+.my_profile > h3, .my_option > i {
+  margin-top: .5rem;
+}
+.my_option {
+    color: lightgray;
+}
+.fa-comment-alt {
+    margin: 0 1rem;
+}
+
+
 #notifications {
     height: 60px;
     background-color: #8EDAFC;
-    padding: .7rem;
+    padding: .8rem;
 }
 #notifications h3 {
     font-size: .8rem;

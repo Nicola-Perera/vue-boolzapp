@@ -22,7 +22,28 @@
                 <div id="side">
 
                     <!-- il mio profilo -->
-                    <div class="head"></div>
+                    <div id="user_avatar" v-for="user in user" class="head">
+
+                            <div class="row">
+
+                                <div class="my_profile row">
+    
+                                    <img :src="user.avatar" alt="user_avatar" class="avatar">
+                                    <h3> {{ user.name }} </h3>
+                                
+                                </div>
+
+                                <div class="my_option">
+
+                                    <i class="fas fa-circle-notch"></i>
+                                    <i class="fas fa-comment-alt"></i>
+                                    <i class="fas fa-ellipsis-v"></i>
+
+                                </div>
+                                                
+                            </div> 
+                        
+                    </div>
 
                     <!-- on/off notifiche dal desktop -->
                     <div id="notifications">
