@@ -36,6 +36,15 @@
 }
 .item .row{
     height: 50px;
+    padding: .5rem;
+}
+.item .row:hover {
+    background-color: #E9EBEB;
+}
+
+.avatar {
+    border-radius: 50%;
+    margin-right: .5rem;
 }
 
 /**********
@@ -64,7 +73,19 @@ main {
 }
 #search {
     height: 40px;
-    background-color: #EAEAEA;
+    background-color: #F3EEEA;
+    padding: .3rem;
+}
+#search .input {
+    background-color: white;
+    height: 1.5rem;
+    padding-left: .2rem;
+    padding-top: .2rem;
+}
+#search  input {
+    background-color: transparent;
+    border: none;
+    width: 90%;
 }
 #contacts {
     height: calc(100% - 150px);

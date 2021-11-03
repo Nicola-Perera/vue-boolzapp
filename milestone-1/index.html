@@ -28,14 +28,23 @@
                     <div id="notifications"></div>
 
                     <!-- ricerca nomi frai contatti -->
-                    <div id="search"></div>
+                    <div id="search">
+
+                        <div class="input">
+
+                            <i class="fas fa-search"></i>
+                            <input type="text" placeholder="Cerca o inizia una nuova chat">
+                        
+                        </div>
+
+                    </div>
 
                     <!-- lista dei miei contatti con chat aperta -->
                     <div id="contacts">
 
                         <div class="item" v-for="(contact, index) in contacts">
                             <div class="row">
-                                <img :src="contact.avatar" alt="">
+                                <img :src="contact.avatar" alt="contact avatar" class="avatar">
                                 {{ contact.name }}
                             </div>
                         </div>
