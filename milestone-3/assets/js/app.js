@@ -92,7 +92,9 @@ const app = new Vue ({
                 }
                 ],
             },
-            ]
+            ],
+
+            addMessage: '',
     },
     methods: {
 
@@ -100,5 +102,16 @@ const app = new Vue ({
         chatWith(i) {
             this.counter = i;
             console.log(counter);
+        },
+
+        // invio un nuovo messaggio
+        newMessage() {    
+            let newText = {
+                text: this.addMessage,
+                status: 'sent'
+            }
+            this.contacts[this.counter].messages.push(newText)
+            this.addMessage = '';
         }
+    }
 })
