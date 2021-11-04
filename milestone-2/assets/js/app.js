@@ -101,4 +101,5 @@ const app = new Vue ({
             this.counter = i;
             console.log(counter);
         }
+    }
 })
