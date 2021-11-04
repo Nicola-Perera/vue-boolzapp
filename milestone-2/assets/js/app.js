@@ -96,8 +96,8 @@ const app = new Vue ({
 
     },
     methods: {
-        chatWith(index) {
-            counter = index;
+        chatWith(i) {
+            this.counter = i;
             console.log(counter);
         }
     }
