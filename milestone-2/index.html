@@ -80,7 +80,7 @@
                     <!-- lista dei miei contatti con chat aperta -->
                     <div id="contacts">
 
-                        <div class="item" v-for="(contact, index) in contacts" :class="counter === counter ? 'active':'' " @click="chatWith(index)">
+                        <div class="item" v-for="(contact, index) in contacts" @click="chatWith(index)" :class="index === counter ? 'active':''">
                             <div class="row">
                                 <img :src="contact.avatar" alt="contact avatar" class="avatar">
                                 {{ contact.name }}
@@ -98,8 +98,8 @@
 
                             <div class="row">
 
-                                <div class="contact_avatar row">
-                                    
+                                <div class="contact_avatar row" v-for="(contact, index) in contacts" v-show="index === counter">
+                                    {{contacts[index].name}}
                                 </div>
 
                                 <div class="contact_option">
