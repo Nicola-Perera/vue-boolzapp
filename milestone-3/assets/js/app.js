@@ -110,8 +110,17 @@ const app = new Vue ({
                 text: this.addMessage,
                 status: 'sent'
             }
+            let replyText = {
+                text: 'ok',
+                status: 'received'
+            }
             this.contacts[this.counter].messages.push(newText)
+            setTimeout(this.replyMessage(replyText), 1000);
             this.addMessage = '';
+        },
+
+        replyMessage(reply) {
+            this.contacts[this.counter].messages.push(reply)
         }
     }
 })
