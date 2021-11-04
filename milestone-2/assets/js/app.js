@@ -7,7 +7,7 @@ const app = new Vue ({
                 avatar: '../img/avatar_7.jpg'
             }
         ],
-        index: 0,
+        counter: 0,
         contacts: [
             {
             name: 'Michele',
@@ -96,9 +96,9 @@ const app = new Vue ({
 
     },
     methods: {
-        chatWith(i) {
-            index = i;
-            console.log(index);
+        chatWith(index) {
+            counter = index;
+            console.log(counter);
         }
     }
 })

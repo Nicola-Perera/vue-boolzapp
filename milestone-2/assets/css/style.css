@@ -5,33 +5,13 @@
     padding: 0;
 }
 
-/* debug */
-.debug header {
-    height: 100px;
-}
-.debug main {
-    height: 1000px;
-}
-
-.debug .row {
-    height: 500px;
-}
-.debug #side {
-    height: 100%;
-    width: 35%;
-}
-.debug #main {
-    height: 100%;
-    width: 65%;
-    
-}
-
 /* common rules */
 .row {
     display: flex; !important
 }
+
 #root .head {
-    height: 50px;
+    height: 80px;
     width: 100%;
     background-color: #EAEAEA;
 }
@@ -55,19 +35,38 @@ header {
     height: 30px;
     background-color: #009688;
 }
+.side_bar {
+    width: 10%;
+    height: 80px;
+    background-color: #009688;
+}
 
 /**********
 main  
 **********/
 main {
+    height: 100vh;
     background-color: #DADBD4;
+}
+main > .row {
+    height: 100%;
 }
 #root {
     width: 80%;
     margin: auto;
+    height: 100%;
+}
+#root > .row {
+    height: calc(100% - 30px);
+}
+#main {
+    width: calc((100% / 3) * 2);
 }
 
 /* side */
+#side {
+    width: calc(100% / 3);
+}
 #user_avatar {
     border-right: 2px solid lightgray;
 }
@@ -78,8 +77,8 @@ main {
     padding: .5rem;
     justify-content: space-between;
 }
-.my_profile > h3, .my_option > i {
-  margin-top: .5rem;
+.my_profile > h3, .my_option > i, .contact_option > i {
+  margin-top: 1.5rem;
 }
 .my_option, .contact_option {
     color: lightgray;
@@ -122,17 +121,32 @@ main {
     width: 90%;
 }
 #contacts {
-    height: calc(100% - 150px);
+    height: calc(100% - 180px);
     background-color: white;
 }
 
 /* chat */
 #chat {
-    height: calc(100% - 95px);
+    height: calc(100% - 140px);
     width: 100%;
     background-color: darkgray;
 }
 #message_input {
-    height: 45px;
+    height: 60px;
     background-color: #F3EEEA;
+    padding: .5rem;
+}
+#message_input > .row {
+    height: 100%;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 2rem;
+    color: gray;
+}
+#new_text {
+    width: 80%;
+    height: 35px;
+    border: none;
+    border-radius: .2rem;
+    padding-left: 1rem;
 }
