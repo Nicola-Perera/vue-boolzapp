@@ -134,7 +134,7 @@ main > .row {
 #chat {
     height: calc(100% - 140px);
     width: 100%;
-    background-color: darkgray;
+    background-image: url(../../../img/mine.jpg);
 }
 #message_input {
     height: 60px;
@@ -154,4 +154,21 @@ main > .row {
     border: none;
     border-radius: .2rem;
     padding-left: 1rem;
+}
+
+/* messages style */
+.message {
+    padding: 1rem;
+    width: 250px;
+    margin: 1rem;
+    border-radius: .5rem;
+}
+.message .row {
+    
+} 
+.sent {
+    background-color: #D5F9BA;
+}
+.received {
+    background-color: white;
 }

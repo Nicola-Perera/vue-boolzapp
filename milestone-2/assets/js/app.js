@@ -7,7 +7,7 @@ const app = new Vue ({
                 avatar: '../img/avatar_7.jpg'
             }
         ],
-        counter: 2,
+        counter: 0,
         contacts: [
             {
             name: 'Michele',

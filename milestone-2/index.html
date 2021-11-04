@@ -117,11 +117,11 @@
                     <!-- sezione con cronologia dei messaggi -->
                     <div id="chat">
 
-                        <div class="item" v-for="(contact, index) in contacts" v-show="index === counter">
-                            <div class="text" v-for="(message, index) in messages">
-                                <p>{{ messages[index].text }}</p>
+                            <div class="message" v-for="(message, index) in contacts[counter].messages" :class="message.status">
+                                                                    
+                                    <p>{{ message.text }}</p>
+                             
                             </div>
-                        </div>
 
                     </div>
 
