@@ -102,26 +102,29 @@ const app = new Vue ({
         // selezione del contatto con cui chattare
         chatWith(i) {
             this.counter = i;
-            console.log(counter);
+            console.log(this.counter);
         },
 
         // invio un nuovo messaggio
         newMessage() {    
             let newText = {
                 text: this.addMessage,
-                status: 'sent'
+                status: 'sent',
+                date: 'now'
             }
-            let replyText = {
-                text: 'ok',
-                status: 'received'
-            }
+            
             this.contacts[this.counter].messages.push(newText)
-            setTimeout(this.replyMessage(replyText), 1000);
+            setTimeout(this.replyMessage, 1000);
             this.addMessage = '';
         },
 
         // ricevo un messaggio di risposta
-        replyMessage(reply) {
+        replyMessage() {
+            let reply = {
+                text: 'ok',
+                status: 'received',
+                date: 'more now'
+            }
             this.contacts[this.counter].messages.push(reply)
         },
 
@@ -131,13 +134,10 @@ const app = new Vue ({
             se il contatto ha il nome che contiene la stringa inserita dall'utente, il contatto continua a far parte del nuovo array 
         */
         filterName() {
-            this.contacts.array.forEach((contact) => {         
-                if (contact.name.match(this.search) != null) {
-                    contact.visible = false;
-                }
-                if (contact.visible) {
-                    this.fileterdContacts.push(contact)     
-                }
+            this.contacts.forEach((contact) => {         
+             
+            contact.visible = contact.name.includes(this.search);
+                
             });
             console.log(this.fileterdContacts)
             console.log(this.contacts[1].name.match(this.search))
