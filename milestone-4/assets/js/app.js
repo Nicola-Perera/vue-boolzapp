@@ -94,7 +94,7 @@ const app = new Vue ({
             },
             ],
             fileterdContacts: [],
-
+            search:'',
             addMessage: '',
     },
     methods: {
@@ -132,11 +132,22 @@ const app = new Vue ({
         */
         filterName() {
             for (let i = 0; i < this.contacts.length; i++) {
+                if (this.contacts[1].name.match(this.search) != null) {
+                    this.contacts[i].visible = false;
+                }
                 if (this.contacts[i].visible) {
-                    this.fileterdContacts.push(this.contacts[this.counter])     
+                    this.fileterdContacts.push(this.contacts[i])     
                 }
             }
-            
+            console.log(this.fileterdContacts)
+            console.log(this.contacts[1].name.match(this.search))
         }
+
+        // il valore di visible di ogni contatto resta true solo se quel contatto contiene il nome che matcha con la ricerca dell'utente
+        /*
+            match per verificare corrispondenza il nome del contatto e la ricerca dell'utente
+            se il match non è verificato ad ogni modifica della ricerca, imposto il valore di visible su falso
+        */
+        
     }
 })

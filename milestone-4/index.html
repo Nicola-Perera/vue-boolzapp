@@ -70,8 +70,8 @@
 
                         <div class="input">
 
-                            <i class="fas fa-search" @click="filterName"></i>
-                            <input type="text" placeholder="Cerca o inizia una nuova chat" >
+                            <i class="fas fa-search" ></i>
+                            <input type="text" placeholder="Cerca o inizia una nuova chat" v-model="search" @change="filterName">
                         
                         </div>
 
