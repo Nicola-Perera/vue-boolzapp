@@ -145,6 +145,7 @@ main > .row {
     width: 100%;
     background-image: url(../../../img/mine.jpg);
     overflow-y: scroll;
+    flex-direction: column;
 }
 #message_input {
     height: 60px;
@@ -170,11 +171,12 @@ main > .row {
 .message {
     padding: 1rem;
     width: 250px;
-    margin: 1rem;
+    margin: 1rem 4rem;
     border-radius: .5rem;
 }
 .sent {
     background-color: #D5F9BA;
+    align-self: end;
 }
 .received {
     background-color: white;
