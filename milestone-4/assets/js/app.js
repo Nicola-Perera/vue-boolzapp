@@ -131,17 +131,18 @@ const app = new Vue ({
             se il contatto ha il nome che contiene la stringa inserita dall'utente, il contatto continua a far parte del nuovo array 
         */
         filterName() {
-            for (let i = 0; i < this.contacts.length; i++) {
-                if (this.contacts[1].name.match(this.search) != null) {
-                    this.contacts[i].visible = false;
+            this.contacts.array.forEach((contact, index) => {         
+                if (contact.name.match(this.search) != null) {
+                    contact.visible = false;
                 }
-                if (this.contacts[i].visible) {
-                    this.fileterdContacts.push(this.contacts[i])     
+                if (contact.visible) {
+                    this.fileterdContacts.push(contact)     
                 }
-            }
+            });
             console.log(this.fileterdContacts)
             console.log(this.contacts[1].name.match(this.search))
         }
+        
 
         // il valore di visible di ogni contatto resta true solo se quel contatto contiene il nome che matcha con la ricerca dell'utente
         /*
