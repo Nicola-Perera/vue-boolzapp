@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vue-boolzapp</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+<body>
+    
+    <header></header>
+
+    <main>
+
+        <div class="row">
+
+            <div class="side_bar"></div>
+       
+        <!-- interfaccia app -->
+        <div id="root" class="container">
+            <div class="row">
+                <!-- blocco secondario a sinistra -->
+                <div id="side">
+
+                    <!-- il mio profilo -->
+                    <div id="user_avatar" v-for="user in user" class="head">
+
+                            <div class="row">
+
+                                <div class="my_profile row">
+    
+                                    <img :src="user.avatar" alt="user_avatar" class="avatar">
+                                    <h3> {{ user.name }} </h3>
+                                
+                                </div>
+
+                                <div class="my_option">
+
+                                    <i class="fas fa-circle-notch"></i>
+                                    <i class="fas fa-comment-alt"></i>
+                                    <i class="fas fa-ellipsis-v"></i>
+
+                                </div>
+                                                
+                            </div> 
+                        
+                    </div>
+
+                    <!-- on/off notifiche dal desktop -->
+                    <div id="notifications">
+
+                        <div class="row">
+
+                            <div>
+                                <i class="fas fa-bell-slash"></i>
+                            </div>
+                            <div>
+                                <h3>Ricevi notifiche di nuovi messaggi</h3>
+                                <a href="#">Attiva notifiche desktop</a>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ricerca nomi frai contatti -->
+                    <div id="search">
+
+                        <div class="input">
+
+                            <i class="fas fa-search" ></i>
+                            <input type="text" placeholder="Cerca o inizia una nuova chat" v-model="search" @change="filterName">
+                        
+                        </div>
+
+                    </div>
+
+                    <!-- lista dei miei contatti con chat aperta -->
+                    <div id="contacts">
+
+                        <div class="item" v-for="(contact, index) in contacts" @click="chatWith(index)" :class="index === counter ? 'active':''">
+                            <div class="row">
+                                <img :src="contact.avatar" alt="contact avatar" class="avatar">
+                                {{ contact.name }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- blocco principale a destra -->
+                <div id="main">
+
+                    <!-- profilo del contatto scelto -->
+
+                        <div id="contact_avatar" class="head">
+
+                            <div class="row">
+
+                                <div class="contact_avatar row" v-for="(contact, index) in contacts" v-show="index === counter">
+                                    <img :src="contact.avatar" alt="contact avatar" class="avatar">
+                                    <div>
+                                        {{ contacts[index].name }}
+                                    </div>
+
+                                    <div>
+                                        {{ contacts[index].messages.date }}
+                                    </div>
+                                </div>
+
+                                <div class="contact_option">
+
+                                    <i class="fas fa-search"></i>
+                                    <i class="fas fa-paperclip"></i>
+                                    <i class="fas fa-ellipsis-v"></i>
+
+                                </div>
+                                                
+                            </div> 
+                        
+                    </div>             
+
+                    <!-- sezione con cronologia dei messaggi -->
+                    <div id="chat" class="row">
+
+                            <div class="message row" v-for="(message, index) in contacts[counter].messages" :class="message.status">
+                                                                    
+                                    <p>{{ message.text }}</p>
+                                    <p class="date">{{ message.date }}</p>
+                             
+                            </div>
+
+                    </div>
+
+                    <!-- invio nuovo messaggio -->
+                    <div id="message_input">
+                        <div class="row">
+                            <i class="far fa-smile"></i>
+                            <input id="new_text" type="text" @keyup.enter="newMessage" placeholder="Scrivi un messaggio" v-model="addMessage">
+                            <i class="fas fa-microphone"></i>
+                        </div>
+
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+
+        <div class="side_bar"></div>
+    </div>
+    </main>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <script src="./assets/js/app.js"></script>
+</body>
+</html>
