@@ -100,7 +100,13 @@
 
                                 <div class="contact_avatar row" v-for="(contact, index) in contacts" v-show="index === counter">
                                     <img :src="contact.avatar" alt="contact avatar" class="avatar">
-                                    {{contacts[index].name}}
+                                    <div>
+                                        {{ contacts[index].name }}
+                                    </div>
+
+                                    <div>
+                                        {{ contacts[index].messages.date }}
+                                    </div>
                                 </div>
 
                                 <div class="contact_option">
@@ -118,9 +124,10 @@
                     <!-- sezione con cronologia dei messaggi -->
                     <div id="chat" class="row">
 
-                            <div class="message" v-for="(message, index) in contacts[counter].messages" :class="message.status">
+                            <div class="message row" v-for="(message, index) in contacts[counter].messages" :class="message.status">
                                                                     
                                     <p>{{ message.text }}</p>
+                                    <p class="date">{{ message.date }}</p>
                              
                             </div>
 

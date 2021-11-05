@@ -131,7 +131,7 @@ const app = new Vue ({
             se il contatto ha il nome che contiene la stringa inserita dall'utente, il contatto continua a far parte del nuovo array 
         */
         filterName() {
-            this.contacts.array.forEach((contact, index) => {         
+            this.contacts.array.forEach((contact) => {         
                 if (contact.name.match(this.search) != null) {
                     contact.visible = false;
                 }
