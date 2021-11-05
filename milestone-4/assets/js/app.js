@@ -119,8 +119,16 @@ const app = new Vue ({
             this.addMessage = '';
         },
 
+        // ricevo un messaggio di risposta
         replyMessage(reply) {
             this.contacts[this.counter].messages.push(reply)
+        },
+
+        // filtro frai contatti
+        filterName() {
+            return this.contacts.filter((contact) => {
+                return contact.name.match(this.search);
+            })
         }
     }
 })
