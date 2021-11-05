@@ -93,6 +93,7 @@ const app = new Vue ({
                 ],
             },
             ],
+            fileterdContacts: [],
 
             addMessage: '',
     },
@@ -125,10 +126,17 @@ const app = new Vue ({
         },
 
         // filtro frai contatti
+        /*
+            restituisce un nuovo array da passare al ciclo for per i contatti nel markup
+            se il contatto ha il nome che contiene la stringa inserita dall'utente, il contatto continua a far parte del nuovo array 
+        */
         filterName() {
-            return this.contacts.filter((contact) => {
-                return contact.name.match(this.search);
-            })
+            for (let i = 0; i < this.contacts.length; i++) {
+                if (this.contacts[i].visible) {
+                    this.fileterdContacts.push(this.contacts[this.counter])     
+                }
+            }
+            
         }
     }
 })
