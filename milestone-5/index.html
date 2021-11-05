@@ -125,8 +125,11 @@
                     <div id="chat" class="row">
 
                             <div class="message row" v-for="(message, index) in contacts[counter].messages" :class="message.status">
-                                                                    
+                                                           
+                                <div class="message_text row">
                                     <p>{{ message.text }}</p>
+                                    <i class="fas fa-chevron-down"></i>
+                                </div>
                                     <p class="date">{{ message.date }}</p>
                              
                             </div>

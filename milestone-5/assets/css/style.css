@@ -183,6 +183,12 @@ main > .row {
     color: gray;
     margin-top: .5rem;
 }
+.message_text {
+    justify-content: space-between;
+}
+.message_text > i {
+    color: gray;
+}
 .sent {
     background-color: #D5F9BA;
     align-self: end;
